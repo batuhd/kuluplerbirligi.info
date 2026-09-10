@@ -1,20 +1,39 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import {
+  Download,
   Instagram,
   Linkedin,
-  Mail,
   MessageCircle,
-  Phone,
   Youtube,
 } from "lucide-react";
 import { useLang } from "@/components/language-provider";
 import { pick } from "@/lib/i18n";
 import type { SiteSettings } from "@/lib/types";
 
-type FooterLink = { href: string; label: string; external?: boolean };
+const PRESS_FILES: { tr: string; en: string; href: string }[] = [
+  {
+    tr: "Yatay logo (renkli)",
+    en: "Horizontal logo (color)",
+    href: "/kb-yatay.png",
+  },
+  {
+    tr: "Dikey logo (renkli)",
+    en: "Vertical logo (color)",
+    href: "/logo-full.png",
+  },
+  {
+    tr: "Dikey logo (beyaz)",
+    en: "Vertical logo (white)",
+    href: "/logo-full-white.png",
+  },
+  {
+    tr: "Amblem",
+    en: "Mark",
+    href: "/logo-mark.png",
+  },
+];
 
 export function SiteFooter({ settings }: { settings: SiteSettings }) {
   const { lang, t } = useLang();
@@ -27,18 +46,9 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
     { href: settings.linkedin_url, label: "LinkedIn", Icon: Linkedin },
   ].filter((s) => s.href);
 
-  const links: FooterLink[] = [
-    { href: "/", label: t.nav.home },
-    ...(settings.clubs_url
-      ? [{ href: settings.clubs_url, label: t.nav.clubsDocs, external: true }]
-      : []),
-    { href: "/sss", label: t.nav.faq },
-    { href: "/iletisim", label: t.nav.contact },
-  ];
-
   return (
     <footer className="mt-auto bg-brand-900 text-slate-300">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-3">
+      <div className="container-page grid gap-8 py-10 md:grid-cols-[1.1fr_1fr] md:items-center">
         <div>
           <div className="flex items-center gap-2.5 text-white">
             <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white">
@@ -67,78 +77,41 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-700 text-slate-300 transition-colors hover:border-brand-400 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-brand-700 text-slate-300 transition-colors hover:border-brand-400 hover:text-white"
                 >
-                  <Icon className="h-4.5 w-4.5" />
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           )}
         </div>
 
-        <div>
+        <div className="md:justify-self-end">
           <h3 className="text-sm font-semibold text-white">
-            {t.footer.quickLinks}
+            {t.footer.pressKit}
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            {links.map((link) => (
-              <li key={link.href}>
-                {link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className="text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                )}
+          <p className="mt-1 text-xs text-slate-500">
+            {t.footer.pressKitHint}
+          </p>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {PRESS_FILES.map((file) => (
+              <li key={file.href}>
+                <a
+                  href={file.href}
+                  download
+                  className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
+                >
+                  <Download className="h-3.5 w-3.5 shrink-0 text-slate-500 group-hover:text-brand-300" />
+                  {lang === "en" ? file.en : file.tr}
+                </a>
               </li>
             ))}
           </ul>
         </div>
-
-        <div>
-          <h3 className="text-sm font-semibold text-white">
-            {t.footer.contact}
-          </h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
-            {settings.contact_email && (
-              <li>
-                <a
-                  href={`mailto:${settings.contact_email}`}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
-                >
-                  <Mail className="h-4 w-4" />
-                  {settings.contact_email}
-                </a>
-              </li>
-            )}
-            {settings.contact_phone && (
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                {settings.contact_phone}
-              </li>
-            )}
-          </ul>
-          <Link
-            href="/admin"
-            className="mt-6 inline-block text-xs text-slate-500 transition-colors hover:text-slate-300"
-          >
-            {t.footer.admin}
-          </Link>
-        </div>
       </div>
 
       <div className="border-t border-brand-800">
-        <div className="container-page flex flex-col items-center justify-between gap-2 py-5 text-xs text-slate-500 sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-2 py-4 text-xs text-slate-500 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {title}. {t.footer.rights}
           </p>

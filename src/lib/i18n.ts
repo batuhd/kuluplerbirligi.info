@@ -121,9 +121,8 @@ const tr = {
     success: "Mesajınız alındı! En kısa sürede size dönüş yapacağız.",
   },
   footer: {
-    quickLinks: "Hızlı Erişim",
-    contact: "İletişim",
-    admin: "Yönetim Paneli",
+    pressKit: "Basın Kiti",
+    pressKitHint: "Logolar ve marka dosyaları",
     rights: "Tüm hakları saklıdır.",
   },
 };
@@ -250,9 +249,8 @@ const en: Dictionary = {
     success: "Your message has been received! We will get back to you soon.",
   },
   footer: {
-    quickLinks: "Quick Links",
-    contact: "Contact",
-    admin: "Admin Panel",
+    pressKit: "Press Kit",
+    pressKitHint: "Logos and brand files",
     rights: "All rights reserved.",
   },
 };
