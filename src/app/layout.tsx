@@ -15,8 +15,8 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Kulüpler Birliği | Öğrenci Kulüpleri Merkezi",
-    template: "%s | Kulüpler Birliği",
+    default: "Altınbaş Üniversitesi Kulüpler Birliği",
+    template: "%s | Altınbaş Üniversitesi Kulüpler Birliği",
   },
   description:
     "Öğrenci kulüpleri için tek adres: kulüp listesi, kuruluş evrakları, yönerge ve etkinlik başvuruları.",
