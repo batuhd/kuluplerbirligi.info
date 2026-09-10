@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, MessageCircle, Youtube } from "lucide-react";
+import {
+  Download,
+  FileText,
+  Linkedin,
+  MessageCircle,
+  Youtube,
+} from "lucide-react";
 import { useLang } from "@/components/language-provider";
 import { pick } from "@/lib/i18n";
 import type { SiteSettings } from "@/lib/types";
@@ -38,7 +44,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           {socials.map(({ href, label, Icon }) => (
             <a
               key={label}
@@ -56,9 +62,17 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           )}
           <Link
             href="/basin"
-            className="text-xs font-medium text-slate-400 underline-offset-2 transition-colors hover:text-white hover:underline"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-1.5 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white"
           >
+            <Download className="h-3.5 w-3.5" />
             {t.footer.pressKit}
+          </Link>
+          <Link
+            href="/evraklar"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-1.5 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            {t.footer.documents}
           </Link>
         </div>
       </div>

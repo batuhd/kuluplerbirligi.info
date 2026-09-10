@@ -122,6 +122,7 @@ const tr = {
   },
   footer: {
     pressKit: "Basın Kiti",
+    documents: "Yönerge ve Formlar",
     rights: "Tüm hakları saklıdır.",
   },
   pressKit: {
@@ -130,6 +131,12 @@ const tr = {
     description:
       "Kulüpler Birliği logosunu ve marka dosyalarını buradan indirebilirsiniz.",
     download: "İndir",
+  },
+  documents: {
+    eyebrow: "Belgeler",
+    title: "Yönerge ve Formlar",
+    description:
+      "Öğrenci kulüpleriyle ilgili yönerge ve güncel başvuru formları.",
   },
 };
 
@@ -256,6 +263,7 @@ const en: Dictionary = {
   },
   footer: {
     pressKit: "Press Kit",
+    documents: "Directive and Forms",
     rights: "All rights reserved.",
   },
   pressKit: {
@@ -263,6 +271,11 @@ const en: Dictionary = {
     title: "Press Kit",
     description: "Download the Clubs Union logo and brand files here.",
     download: "Download",
+  },
+  documents: {
+    eyebrow: "Documents",
+    title: "Directive and Forms",
+    description: "The directive and current application forms for student clubs.",
   },
 };
 

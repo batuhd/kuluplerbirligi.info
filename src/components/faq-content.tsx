@@ -12,40 +12,8 @@ import {
 } from "lucide-react";
 import { useLang } from "@/components/language-provider";
 import { pick } from "@/lib/i18n";
+import { CLUB_DOCUMENTS } from "@/lib/documents";
 import type { FaqItem } from "@/lib/types";
-
-const CLUB_DOCS: { tr: string; en: string; url: string }[] = [
-  {
-    tr: "Öğrenci Kulüpleri Yönergesi",
-    en: "Student Clubs Directive",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/Ogrenci-Kulupleri-Yonergesi.docx",
-  },
-  {
-    tr: "Kulüp Kurulma Talebi Formu (EK-1)",
-    en: "Club Formation Request Form (Annex-1)",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/KULUP-KURULMA-TALEBI.odt",
-  },
-  {
-    tr: "Kulüp Tüzüğü (EK-2)",
-    en: "Club Bylaws (Annex-2)",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/SKS-2-Kulup-Tuzugu.docx",
-  },
-  {
-    tr: "Faaliyet Bildirim Formu (EK-3)",
-    en: "Activity Notification Form (Annex-3)",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/FAALIYET-BILDIRIM-FORMU.odt",
-  },
-  {
-    tr: "Akademik Danışman Formu (EK-4)",
-    en: "Academic Advisor Form (Annex-4)",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/AKADEMIK-DANISMAN-FORMU.odt",
-  },
-  {
-    tr: "Etkinlik Başvuru Formu (EK-5)",
-    en: "Event Application Form (Annex-5)",
-    url: "https://audost.altinbas.edu.tr/wp-content/uploads/YYB-F-03.5-Ogrenci-Kulupleri-Etkinlik-Basvuru-Formu.Ek5-Rev.0.doc",
-  },
-];
 
 const LINK_PATTERN = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
 
@@ -196,7 +164,7 @@ export function FaqContent({ items }: { items: FaqItem[] }) {
                 {t.faq.docsTitle}
               </h3>
               <ul className="mt-3 space-y-2">
-                {CLUB_DOCS.map((doc) => (
+                {CLUB_DOCUMENTS.map((doc) => (
                   <li key={doc.url}>
                     <a
                       href={doc.url}
