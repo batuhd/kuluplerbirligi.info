@@ -43,7 +43,8 @@ export type ContactMessage = {
 
 export type SiteSettings = {
   id: number;
-  site_title: string;
+  site_title_tr: string;
+  site_title_en: string | null;
   contact_email: string | null;
   contact_phone: string | null;
   address: string | null;
@@ -57,7 +58,8 @@ export type SiteSettings = {
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   id: 1,
-  site_title: "Kulüpler Birliği",
+  site_title_tr: "Kulüpler Birliği",
+  site_title_en: "Clubs Union",
   contact_email: "info@kuluplerbirligi.info",
   contact_phone: null,
   address: null,

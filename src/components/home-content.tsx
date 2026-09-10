@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Send } from "lucide-react";
 import { LinkCard } from "@/components/cards";
 import { useLang } from "@/components/language-provider";
+import { pick } from "@/lib/i18n";
 import type { LinkItem, SiteSettings } from "@/lib/types";
 
 export function HomeContent({
@@ -14,7 +15,7 @@ export function HomeContent({
   settings: SiteSettings;
   links: LinkItem[];
 }) {
-  const { t } = useLang();
+  const { lang, t } = useLang();
 
   return (
     <div className="container-page flex justify-center py-12 md:py-16">
@@ -22,7 +23,7 @@ export function HomeContent({
         <div className="flex justify-center">
           <Image
             src="/kb-yatay.png"
-            alt={settings.site_title}
+            alt={pick(lang, settings.site_title_tr, settings.site_title_en)}
             width={900}
             height={313}
             priority

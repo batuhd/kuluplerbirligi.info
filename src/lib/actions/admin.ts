@@ -194,7 +194,8 @@ export async function saveSettings(formData: FormData) {
 
   const payload = {
     id: 1,
-    site_title: str(formData, "site_title") || "Kulüpler Birliği",
+    site_title_tr: str(formData, "site_title_tr") || "Kulüpler Birliği",
+    site_title_en: nullable(formData, "site_title_en"),
     contact_email: nullable(formData, "contact_email"),
     contact_phone: nullable(formData, "contact_phone"),
     address: nullable(formData, "address"),

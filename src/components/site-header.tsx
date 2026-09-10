@@ -7,6 +7,7 @@ import { useState } from "react";
 import { ExternalLink, Menu, X } from "lucide-react";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useLang } from "@/components/language-provider";
+import { pick } from "@/lib/i18n";
 
 type NavItem = {
   key: "home" | "clubsDocs" | "faq" | "contact";
@@ -15,16 +16,20 @@ type NavItem = {
 };
 
 export function SiteHeader({
-  title,
+  titleTr,
+  titleEn,
   clubsUrl,
 }: {
-  title: string;
+  titleTr: string;
+  titleEn?: string | null;
   clubsUrl?: string | null;
 }) {
   const pathname = usePathname();
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const [open, setOpen] = useState(false);
   const [pendingUrl, setPendingUrl] = useState<string | null>(null);
+
+  const title = pick(lang, titleTr, titleEn);
 
   const items: NavItem[] = [
     { key: "home", href: "/" },

@@ -58,7 +58,8 @@ create table if not exists public.contact_messages (
 
 create table if not exists public.site_settings (
   id integer primary key default 1,
-  site_title text not null default 'Kulüpler Birliği',
+  site_title_tr text not null default 'Kulüpler Birliği',
+  site_title_en text,
   contact_email text,
   contact_phone text,
   address text,
@@ -162,17 +163,30 @@ create policy "messages admin delete"
 -- Varsayılan ayar satırı
 -- ---------------------------------------------------------------------
 
-insert into public.site_settings (id, clubs_url)
-values (1, 'https://audost.altinbas.edu.tr/?page_id=328')
+insert into public.site_settings (id, site_title_tr, site_title_en, clubs_url)
+values (
+  1,
+  'Kulüpler Birliği',
+  'Clubs Union',
+  'https://audost.altinbas.edu.tr/?page_id=328'
+)
 on conflict (id) do nothing;
 
--- Daha önce kurulmuş bir veritabanı için: eksik kolonu ekle ve
--- yönlendirme adresini varsayılan olarak ata.
+-- Daha önce kurulmuş bir veritabanı için: eksik kolonları ekle ve
+-- varsayılan değerleri ata, eski tek dilli site_title kolonunu kaldır.
 alter table public.site_settings add column if not exists clubs_url text;
+alter table public.site_settings add column if not exists site_title_tr text not null default 'Kulüpler Birliği';
+alter table public.site_settings add column if not exists site_title_en text;
 
 update public.site_settings
 set clubs_url = 'https://audost.altinbas.edu.tr/?page_id=328'
 where id = 1 and (clubs_url is null or clubs_url = '');
+
+update public.site_settings
+set site_title_en = 'Clubs Union'
+where id = 1 and (site_title_en is null or site_title_en = '');
+
+alter table public.site_settings drop column if exists site_title;
 
 -- ---------------------------------------------------------------------
 -- Başlangıç linkleri

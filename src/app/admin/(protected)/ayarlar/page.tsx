@@ -32,19 +32,25 @@ export default async function AdminAyarlarPage({
         <form action={saveSettings} className="space-y-6">
           <div className="grid gap-5 md:grid-cols-2">
             <Field
-              label="Site Başlığı"
-              name="site_title"
-              defaultValue={settings.site_title}
+              label="Site Başlığı (TR)"
+              name="site_title_tr"
+              defaultValue={settings.site_title_tr}
               required
             />
             <Field
-              label="Yönlendirme URL (Tüm Kulüpler ve Evraklar)"
-              name="clubs_url"
-              defaultValue={settings.clubs_url}
-              placeholder="https://..."
-              hint="Menüdeki 'Tüm Kulüpler ve Evraklar' bu adrese yönlendirir"
+              label="Site Başlığı (EN)"
+              name="site_title_en"
+              defaultValue={settings.site_title_en}
             />
           </div>
+
+          <Field
+            label="Yönlendirme URL (Tüm Kulüpler ve Evraklar)"
+            name="clubs_url"
+            defaultValue={settings.clubs_url}
+            placeholder="https://..."
+            hint="Menüdeki 'Tüm Kulüpler ve Evraklar' bu adrese yönlendirir"
+          />
 
           <div className="border-t border-slate-100 pt-6">
             <h2 className="mb-4 text-sm font-semibold text-slate-900">
