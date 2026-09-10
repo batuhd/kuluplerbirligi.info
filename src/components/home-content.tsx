@@ -20,16 +20,14 @@ export function HomeContent({
     <div className="container-page flex justify-center py-12 md:py-16">
       <div className="w-full max-w-2xl">
         <div className="flex justify-center">
-          <span className="flex h-40 w-40 items-center justify-center md:h-52 md:w-52">
-            <Image
-              src="/logo-mark.png"
-              alt={settings.site_title}
-              width={208}
-              height={208}
-              priority
-              className="h-full w-full object-contain"
-            />
-          </span>
+          <Image
+            src="/kb-yatay.png"
+            alt={settings.site_title}
+            width={900}
+            height={313}
+            priority
+            className="h-auto w-full max-w-md"
+          />
         </div>
 
         <div className="mt-10 space-y-3">
