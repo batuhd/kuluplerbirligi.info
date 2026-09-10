@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { getSettings } from "@/lib/data";
 
 export default async function SiteLayout({
@@ -16,6 +17,7 @@ export default async function SiteLayout({
         clubsUrl={settings.clubs_url}
       />
       <main className="flex-1">{children}</main>
+      <SiteFooter settings={settings} />
     </>
   );
 }
