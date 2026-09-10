@@ -78,9 +78,30 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
       </div>
 
       <div className="border-t border-brand-800">
-        <div className="container-page flex flex-col items-center justify-between gap-1 py-3 text-[11px] text-slate-500 sm:flex-row">
+        <div className="container-page flex flex-col items-center gap-2 py-3 text-[11px] text-slate-500 sm:flex-row sm:justify-between">
           <p>
             © {new Date().getFullYear()} {title}. {t.footer.rights}
+          </p>
+          <p className="flex items-center gap-2">
+            <a
+              href="https://www.altinbas.edu.tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-slate-300"
+            >
+              {t.common.university}
+            </a>
+            <span className="text-brand-700" aria-hidden="true">
+              ·
+            </span>
+            <a
+              href="https://audost.altinbas.edu.tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-slate-300"
+            >
+              AUDOST
+            </a>
           </p>
           <p>kuluplerbirligi.info</p>
         </div>
