@@ -33,8 +33,8 @@ export function DocumentsContent() {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-lg"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                <FileText className="h-5 w-5" />
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700 sm:h-11 sm:w-11 sm:rounded-xl">
+                <FileText className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <span className="min-w-0 flex-1 font-semibold text-slate-900">
                 {lang === "en" ? doc.en : doc.tr}

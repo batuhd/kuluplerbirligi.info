@@ -46,7 +46,7 @@ export function ContactContent({ settings }: { settings: SiteSettings }) {
               href={`mailto:${settings.contact_email}`}
               className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-colors hover:border-brand-200"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-700 sm:h-11 sm:w-11 sm:rounded-xl">
                 <Mail className="h-5 w-5" />
               </span>
               <span>
@@ -62,7 +62,7 @@ export function ContactContent({ settings }: { settings: SiteSettings }) {
 
           {settings.contact_phone && (
             <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-700 sm:h-11 sm:w-11 sm:rounded-xl">
                 <Phone className="h-5 w-5" />
               </span>
               <span>
@@ -78,7 +78,7 @@ export function ContactContent({ settings }: { settings: SiteSettings }) {
 
           {settings.address && (
             <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-700 sm:h-11 sm:w-11 sm:rounded-xl">
                 <MapPin className="h-5 w-5" />
               </span>
               <span>

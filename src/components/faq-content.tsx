@@ -90,7 +90,7 @@ function ColumnHeader({
 }) {
   return (
     <div className="mb-4 flex items-center gap-3">
-      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-700 text-white">
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-700 text-white sm:h-10 sm:w-10 sm:rounded-xl">
         {icon}
       </span>
       <h2 className="text-lg font-bold text-slate-900">{title}</h2>
@@ -142,7 +142,7 @@ export function FaqContent({ items }: { items: FaqItem[] }) {
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
             <ColumnHeader
-              icon={<GraduationCap className="h-5 w-5" />}
+              icon={<GraduationCap className="h-4 w-4 sm:h-5 sm:w-5" />}
               title={t.faq.studentsTitle}
             />
             <FaqAccordion items={students} emptyText={t.faq.studentsEmpty} />
@@ -150,7 +150,7 @@ export function FaqContent({ items }: { items: FaqItem[] }) {
 
           <div>
             <ColumnHeader
-              icon={<Users className="h-5 w-5" />}
+              icon={<Users className="h-4 w-4 sm:h-5 sm:w-5" />}
               title={t.faq.clubsTitle}
             />
             <FaqAccordion items={clubs} emptyText={t.faq.clubsEmpty} />

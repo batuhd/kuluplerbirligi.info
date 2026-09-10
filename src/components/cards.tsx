@@ -25,13 +25,13 @@ export function LinkCard({ item }: { item: LinkItem }) {
       }`}
     >
       <span
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg sm:h-11 sm:w-11 sm:rounded-xl ${
           item.is_featured
             ? "bg-brand-600 text-white"
             : "bg-slate-100 text-slate-700 group-hover:bg-brand-50 group-hover:text-brand-700"
         }`}
       >
-        <DynamicIcon name={item.icon} className="h-5 w-5" />
+        <DynamicIcon name={item.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
       </span>
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-2 font-semibold text-slate-900">
