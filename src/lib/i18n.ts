@@ -85,7 +85,6 @@ const tr = {
     clubsTitle: "Kulüpler İçin",
     studentsEmpty: "Henüz soru eklenmemiş.",
     clubsEmpty: "Henüz soru eklenmemiş.",
-    docsTitle: "Yönerge ve Formlar",
     ctaTitle: "Aklına takılan başka bir şey mi var?",
     ctaText:
       "Kulüp süreçleri, yaklaşan etkinlikler veya aklındaki yeni kulüp fikri hakkında danışmak istediğin her şey için buradayız.",
@@ -226,7 +225,6 @@ const en: Dictionary = {
     clubsTitle: "For Clubs",
     studentsEmpty: "No questions added yet.",
     clubsEmpty: "No questions added yet.",
-    docsTitle: "Directive and Forms",
     ctaTitle: "Have another question?",
     ctaText:
       "We are here for everything you want to ask about club processes, upcoming events or your new club idea.",

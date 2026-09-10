@@ -3,8 +3,6 @@
 import Link from "next/link";
 import {
   ChevronDown,
-  ExternalLink,
-  FileText,
   GraduationCap,
   HelpCircle,
   Send,
@@ -12,7 +10,6 @@ import {
 } from "lucide-react";
 import { useLang } from "@/components/language-provider";
 import { pick } from "@/lib/i18n";
-import { CLUB_DOCUMENTS } from "@/lib/documents";
 import type { FaqItem } from "@/lib/types";
 
 const LINK_PATTERN = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
@@ -102,7 +99,7 @@ function ColumnHeader({
 }
 
 export function FaqContent({ items }: { items: FaqItem[] }) {
-  const { lang, t } = useLang();
+  const { t } = useLang();
 
   const students = items.filter((item) => item.audience !== "clubs");
   const clubs = items.filter((item) => item.audience === "clubs");
@@ -157,28 +154,6 @@ export function FaqContent({ items }: { items: FaqItem[] }) {
               title={t.faq.clubsTitle}
             />
             <FaqAccordion items={clubs} emptyText={t.faq.clubsEmpty} />
-
-            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
-              <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
-                <FileText className="h-4 w-4 text-accent-500" />
-                {t.faq.docsTitle}
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {CLUB_DOCUMENTS.map((doc) => (
-                  <li key={doc.url}>
-                    <a
-                      href={doc.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-start gap-2 text-sm text-slate-600 transition-colors hover:text-brand-700"
-                    >
-                      <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400 group-hover:text-brand-600" />
-                      {lang === "en" ? doc.en : doc.tr}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </section>
