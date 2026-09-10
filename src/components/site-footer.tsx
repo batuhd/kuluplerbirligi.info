@@ -25,7 +25,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
 
   return (
     <footer className="mt-auto bg-brand-900 text-slate-300">
-      <div className="container-page flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="container-page flex flex-col items-center gap-4 py-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <div className="flex items-center gap-2.5 text-white">
           <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white">
             <Image
@@ -44,7 +44,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
           {socials.map(({ href, label, Icon }) => (
             <a
               key={label}
@@ -62,14 +62,14 @@ export function SiteFooter({ settings }: { settings: SiteSettings }) {
           )}
           <Link
             href="/basin"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-1.5 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-2 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white sm:py-1.5"
           >
             <Download className="h-3.5 w-3.5" />
             {t.footer.pressKit}
           </Link>
           <Link
             href="/evraklar"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-1.5 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-800 px-3 py-2 text-xs font-medium text-slate-200 ring-1 ring-inset ring-brand-700 transition-colors hover:bg-brand-700 hover:text-white sm:py-1.5"
           >
             <FileText className="h-3.5 w-3.5" />
             {t.footer.documents}

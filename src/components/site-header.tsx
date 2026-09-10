@@ -82,30 +82,30 @@ export function SiteHeader({
           <span className="h-full w-20 bg-accent-500" />
         </div>
         <div className="container-page flex h-16 items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 font-semibold text-slate-900"
-            onClick={() => setOpen(false)}
-          >
-            <Image
-              src="/logo-mark.png"
-              alt={title}
-              width={36}
-              height={36}
-              priority
-              className="h-9 w-9 object-contain"
-            />
-            <span className="flex flex-col leading-tight">
-              <span className="text-[11px] font-medium text-brand-700">
-                {t.common.university}
-              </span>
-              <span className="text-[15px] font-semibold leading-tight text-slate-900">
-                {title}
-              </span>
+        <Link
+          href="/"
+          className="flex min-w-0 items-center gap-2.5 font-semibold text-slate-900"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src="/logo-mark.png"
+            alt={title}
+            width={36}
+            height={36}
+            priority
+            className="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9"
+          />
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="truncate text-[10px] font-medium text-brand-700 sm:text-[11px]">
+              {t.common.university}
             </span>
-          </Link>
+            <span className="truncate text-[13px] font-semibold leading-tight text-slate-900 sm:text-[15px]">
+              {title}
+            </span>
+          </span>
+        </Link>
 
-          <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <nav className="hidden items-center gap-1 md:flex">
               {items.map((item) =>
                 item.external ? (
