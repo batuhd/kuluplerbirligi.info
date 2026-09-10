@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Pantone 2757 C - kurumsal lacivert */
+  --color-brand-50: #eef0f7;
+  --color-brand-100: #d7dcea;
+  --color-brand-200: #b0bad3;
+  --color-brand-300: #8794b8;
+  --color-brand-400: #5d6d9c;
+  --color-brand-500: #3e4f80;
+  --color-brand-600: #2b3a68;
+  --color-brand-700: #212c55;
+  --color-brand-800: #1a2243;
+  --color-brand-900: #131930;
+
+  /* Pantone 185 C - kurumsal kırmızı */
+  --color-accent-50: #fdeaee;
+  --color-accent-100: #fbcbd4;
+  --color-accent-200: #f7a0b1;
+  --color-accent-300: #f26f89;
+  --color-accent-400: #ed3f60;
+  --color-accent-500: #e4002b;
+  --color-accent-600: #c50025;
+  --color-accent-700: #a0001e;
+  --color-accent-800: #7a0017;
+  --color-accent-900: #54000f;
+}
+
+:root {
+  --background: #f5f6fa;
+  --foreground: #131930;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--color-brand-200);
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+}
