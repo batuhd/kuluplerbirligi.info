@@ -122,8 +122,14 @@ const tr = {
   },
   footer: {
     pressKit: "Basın Kiti",
-    pressKitHint: "Logolar ve marka dosyaları",
     rights: "Tüm hakları saklıdır.",
+  },
+  pressKit: {
+    eyebrow: "Kurumsal",
+    title: "Basın Kiti",
+    description:
+      "Kulüpler Birliği logosunu ve marka dosyalarını buradan indirebilirsiniz.",
+    download: "İndir",
   },
 };
 
@@ -250,8 +256,13 @@ const en: Dictionary = {
   },
   footer: {
     pressKit: "Press Kit",
-    pressKitHint: "Logos and brand files",
     rights: "All rights reserved.",
+  },
+  pressKit: {
+    eyebrow: "Corporate",
+    title: "Press Kit",
+    description: "Download the Clubs Union logo and brand files here.",
+    download: "Download",
   },
 };
 
